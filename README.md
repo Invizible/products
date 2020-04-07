@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## To Run
 
-1. `docker-compose up`
+`docker-compose up` to run Mongo and App
 
 ## Development server
 
