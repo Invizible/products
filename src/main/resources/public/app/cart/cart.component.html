@@ -1,0 +1,7 @@
+<ng-container *ngFor="let cartItem of cart.cartItems; trackBy: trackByFn">
+  <app-cart-item [cartItem]="cartItem" [readonly]="readonly" (cartItemChange)="cartItemChange($event)" (removeEvent)="removeCartItem(cartItem)"></app-cart-item>
+</ng-container>
+
+<p>
+  Total {{ cart.total | currency }}
+</p>

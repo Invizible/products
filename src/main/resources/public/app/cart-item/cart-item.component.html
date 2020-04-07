@@ -1,0 +1,14 @@
+<div>
+  <img [src]="cartItem.product.photo" [alt]="cartItem.product.title" width="300">
+  <h3>{{ cartItem.product.title }}</h3>
+  <span>{{ cartItem.product.description }}</span>
+  <span>{{ cartItem.product.price | currency }}</span>
+
+  <div>
+    <button *ngIf="!readonly" (click)="subtract()">-</button>
+    <span>{{ cartItem.quantity }}</span>
+    <button *ngIf="!readonly" (click)="add()">+</button>
+  </div>
+
+  <a *ngIf="!readonly" (click)="remove()">X</a>
+</div>

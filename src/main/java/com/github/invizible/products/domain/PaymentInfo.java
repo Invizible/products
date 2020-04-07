@@ -18,9 +18,9 @@ public class PaymentInfo {
 
     @Data
     public static class ExpirationDate {
-        @Pattern(regexp = "/d{2}")
+        @Pattern(regexp = "\\d{2}")
         private String year;
-        @Pattern(regexp = "/d{2}")
+        @Pattern(regexp = "\\d{2}")
         private String month;
     }
 }

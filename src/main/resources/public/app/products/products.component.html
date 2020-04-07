@@ -1,0 +1,10 @@
+<div>
+  <ng-container *ngFor="let product of products$ | async; trackBy: trackByFn">
+    <app-product [product]="product" (addToCartEvent)="addToCart($event)"></app-product>
+  </ng-container>
+
+  <div>
+    <button (click)="prevPage()" [disabled]="pageNumber === 0">&lt;</button>
+    <button (click)="nextPage()" [disabled]="pageNumber === totalPages - 1">&gt;</button>
+  </div>
+</div>

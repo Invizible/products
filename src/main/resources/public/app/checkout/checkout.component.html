@@ -1,0 +1,18 @@
+<h1>Checkout</h1>
+
+<div *ngIf="cart$ | async as cart">
+  <ng-container *ngIf="cart.cartItems">
+    <div>
+      <app-cart [cart]="cart" (cartChange)="cartChange($event)"></app-cart>
+    </div>
+
+    <div>
+      <app-payment-info [paymentInfo]="paymentInfo" (submitEvent)="submitPurchase($event)"></app-payment-info>
+    </div>
+
+    <div>
+      <a routerLink="/products">Back to Products</a>
+    </div>
+  </ng-container>
+</div>
+

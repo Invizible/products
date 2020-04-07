@@ -1,0 +1,55 @@
+<div>
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm.value)">
+    <div>
+      <label for="cardNumber">
+        Card number
+      </label>
+      <input id="cardNumber" type="text" formControlName="cardNumber">
+      <div *ngIf="paymentForm.get('cardNumber').hasError('required')">
+        Field is required
+      </div>
+      <div *ngIf="paymentForm.get('cardNumber').hasError('pattern')">
+        Invalid Card Number
+      </div>
+    </div>
+
+    <div formGroupName="expirationDate">
+      <label>
+        Month:
+        <input type="text" formControlName="month" [maxLength]="2">
+        <div *ngIf="paymentForm.get('expirationDate.month').hasError('required')">
+          Field is required
+        </div>
+        <div *ngIf="paymentForm.get('expirationDate.month').hasError('pattern')">
+          Invalid format
+        </div>
+      </label>
+
+      <label>
+        Year:
+        <input type="text" formControlName="year" [maxLength]="2">
+        <div *ngIf="paymentForm.get('expirationDate.year').hasError('required')">
+          Field is required
+        </div>
+        <div *ngIf="paymentForm.get('expirationDate.year').hasError('pattern')">
+          Invalid format
+        </div>
+      </label>
+    </div>
+
+    <div>
+      <label for="ccv">
+        CCV
+      </label>
+      <input id="ccv" type="text" formControlName="securityCode" [maxLength]="3">
+      <div *ngIf="paymentForm.get('securityCode').hasError('required')">
+        Field is required
+      </div>
+      <div *ngIf="paymentForm.get('securityCode').hasError('pattern')">
+        Invalid format
+      </div>
+    </div>
+
+    <button class="button" type="submit" [disabled]="paymentForm.invalid">Purchase</button>
+  </form>
+</div>
