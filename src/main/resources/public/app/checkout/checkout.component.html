@@ -1,7 +1,7 @@
 <h1>Checkout</h1>
 
 <div *ngIf="cart$ | async as cart">
-  <ng-container *ngIf="cart.cartItems">
+  <ng-container *ngIf="cart.cartItems.length">
     <div>
       <app-cart [cart]="cart" (cartChange)="cartChange($event)"></app-cart>
     </div>

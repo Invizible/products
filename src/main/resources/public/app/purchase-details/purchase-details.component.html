@@ -1,7 +1,7 @@
 <h1>Success Purchase Details</h1>
 
 <div *ngIf="cart$ | async as cart">
-  <ng-container *ngIf="cart.cartItems">
+  <ng-container *ngIf="cart.cartItems.length">
     <h2>Your purchase:</h2>
 
     <app-cart [cart]="cart" [readonly]="true"></app-cart>
