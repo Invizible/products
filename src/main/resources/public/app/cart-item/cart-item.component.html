@@ -1,14 +1,19 @@
-<div>
-  <img [src]="cartItem.product.photo" [alt]="cartItem.product.title" width="300">
-  <h3>{{ cartItem.product.title }}</h3>
-  <span>{{ cartItem.product.description }}</span>
-  <span>{{ cartItem.product.price | currency }}</span>
-
-  <div>
-    <button *ngIf="!readonly" (click)="subtract()">-</button>
+<mat-grid-list cols="5" rowHeight="200px">
+  <mat-grid-tile>
+    <img mat-card-image [src]="cartItem.product.photo" [alt]="cartItem.product.title">
+  </mat-grid-tile>
+  <mat-grid-tile>
+    {{ cartItem.product.title }}
+  </mat-grid-tile>
+  <mat-grid-tile>
+    {{ cartItem.product.price | currency }}
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button class="quantity-button" mat-mini-fab *ngIf="!readonly" (click)="subtract()">-</button>
     <span>{{ cartItem.quantity }}</span>
-    <button *ngIf="!readonly" (click)="add()">+</button>
-  </div>
-
-  <a *ngIf="!readonly" (click)="remove()">X</a>
-</div>
+    <button class="quantity-button" mat-mini-fab *ngIf="!readonly" (click)="add()">+</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <a mat-mini-fab *ngIf="!readonly" (click)="remove()">X</a>
+  </mat-grid-tile>
+</mat-grid-list>

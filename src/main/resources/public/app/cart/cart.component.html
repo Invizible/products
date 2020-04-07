@@ -1,7 +1,10 @@
-<ng-container *ngFor="let cartItem of cart.cartItems; trackBy: trackByFn">
-  <app-cart-item [cartItem]="cartItem" [readonly]="readonly" (cartItemChange)="cartItemChange($event)" (removeEvent)="removeCartItem(cartItem)"></app-cart-item>
-</ng-container>
+<div>
+  <ng-container *ngFor="let cartItem of cart.cartItems; trackBy: trackByFn">
+    <app-cart-item [cartItem]="cartItem" [readonly]="readonly" (cartItemChange)="cartItemChange($event)" (removeEvent)="removeCartItem(cartItem)"></app-cart-item>
+  </ng-container>
 
-<p>
-  Total {{ cart.total | currency }}
-</p>
+  <h3>
+    Total: {{ cart.total | currency }}
+  </h3>
+</div>
+

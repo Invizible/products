@@ -1,7 +1,17 @@
-<div>
-  <img [src]="product.photo" [alt]="product.title" width="300">
-  <h3>{{ product.title }}</h3>
-  <p>{{ product.description }}</p>
-  <p>{{ product.price | currency }}</p>
-  <button (click)="addToCart()">Buy</button>
-</div>
+<mat-card class="card">
+  <img mat-card-image [src]="product.photo" [alt]="product.title">
+  <mat-card-header>
+    <mat-card-title>{{ product.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ product.description }}
+    </p>
+    <p>
+      {{ product.price | currency }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="addToCart()">BUY</button>
+  </mat-card-actions>
+</mat-card>

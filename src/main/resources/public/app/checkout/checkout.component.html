@@ -2,17 +2,11 @@
 
 <div *ngIf="cart$ | async as cart">
   <ng-container *ngIf="cart.cartItems.length">
-    <div>
-      <app-cart [cart]="cart" (cartChange)="cartChange($event)"></app-cart>
-    </div>
+    <app-cart [cart]="cart" (cartChange)="cartChange($event)"></app-cart>
 
-    <div>
-      <app-payment-info [paymentInfo]="paymentInfo" (submitEvent)="submitPurchase($event)"></app-payment-info>
-    </div>
-
-    <div>
-      <a routerLink="/products">Back to Products</a>
-    </div>
+    <app-payment-info [paymentInfo]="paymentInfo" (submitEvent)="submitPurchase($event)"></app-payment-info>
   </ng-container>
 </div>
+
+<a mat-button routerLink="/products" class="products-link">Back to Products</a>
 

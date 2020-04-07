@@ -52,7 +52,7 @@ public class ProductsApplication implements CommandLineRunner {
         products.add(Product.builder()
                 .title("Apple pie")
                 .description("Apple pie")
-                .photo("https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/16800-blue-ribbon-apple-pie-600x600.jpg?ext=.jpg")
+                .photo("https://kristineskitchenblog.com/wp-content/uploads/2013/11/Apple-Pie-700-592.jpg")
                 .price(new BigDecimal("105.0"))
                 .build());
 
@@ -73,7 +73,7 @@ public class ProductsApplication implements CommandLineRunner {
         products.add(Product.builder()
                 .title("Molten chocolate puddings")
                 .description("Molten chocolate puddings")
-                .photo("https://www.lurpak.com/optimized/variable-medium/siteassets/final-recipe-assets/lurpak_b_chocolate_pudding.jpg")
+                .photo("https://cdn.donnahaycdn.com.au/images/content-images/magic_chocolate_molten_puddings.jpg")
                 .price(new BigDecimal("99.0"))
                 .build());
 

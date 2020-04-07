@@ -1,55 +1,53 @@
 <div>
+  <h2>Payment info</h2>
   <form [formGroup]="paymentForm" (ngSubmit)="onSubmit(paymentForm.value)">
-    <div>
-      <label for="cardNumber">
-        Card number
-      </label>
-      <input id="cardNumber" type="text" formControlName="cardNumber">
-      <div *ngIf="paymentForm.get('cardNumber').hasError('required')">
+    <mat-form-field>
+      <mat-label>Card number</mat-label>
+      <input matInput formControlName="cardNumber" [maxLength]="16">
+      <mat-error *ngIf="paymentForm.get('cardNumber').hasError('required')">
         Field is required
-      </div>
-      <div *ngIf="paymentForm.get('cardNumber').hasError('pattern')">
+      </mat-error>
+      <mat-error *ngIf="paymentForm.get('cardNumber').hasError('pattern')">
         Invalid Card Number
-      </div>
-    </div>
+      </mat-error>
+    </mat-form-field>
 
     <div formGroupName="expirationDate">
-      <label>
-        Month:
-        <input type="text" formControlName="month" [maxLength]="2">
-        <div *ngIf="paymentForm.get('expirationDate.month').hasError('required')">
+      <mat-form-field>
+        <mat-label>Month</mat-label>
+        <input matInput formControlName="month" [maxLength]="2">
+        <mat-error *ngIf="paymentForm.get('expirationDate.month').hasError('required')">
           Field is required
-        </div>
-        <div *ngIf="paymentForm.get('expirationDate.month').hasError('pattern')">
+        </mat-error>
+        <mat-error *ngIf="paymentForm.get('expirationDate.month').hasError('pattern')">
           Invalid format
-        </div>
-      </label>
+        </mat-error>
+      </mat-form-field>
 
-      <label>
-        Year:
-        <input type="text" formControlName="year" [maxLength]="2">
-        <div *ngIf="paymentForm.get('expirationDate.year').hasError('required')">
+      <mat-form-field>
+        <mat-label>Year</mat-label>
+        <input matInput formControlName="year" [maxLength]="2">
+        <mat-error *ngIf="paymentForm.get('expirationDate.year').hasError('required')">
           Field is required
-        </div>
-        <div *ngIf="paymentForm.get('expirationDate.year').hasError('pattern')">
+        </mat-error>
+        <mat-error *ngIf="paymentForm.get('expirationDate.year').hasError('pattern')">
           Invalid format
-        </div>
-      </label>
+        </mat-error>
+      </mat-form-field>
     </div>
 
-    <div>
-      <label for="ccv">
-        CCV
-      </label>
-      <input id="ccv" type="text" formControlName="securityCode" [maxLength]="3">
-      <div *ngIf="paymentForm.get('securityCode').hasError('required')">
+    <mat-form-field>
+      <mat-label>CCV</mat-label>
+      <input matInput formControlName="securityCode" [maxLength]="3">
+      <mat-error *ngIf="paymentForm.get('securityCode').hasError('required')">
         Field is required
-      </div>
-      <div *ngIf="paymentForm.get('securityCode').hasError('pattern')">
+      </mat-error>
+      <mat-error *ngIf="paymentForm.get('securityCode').hasError('pattern')">
         Invalid format
-      </div>
-    </div>
+      </mat-error>
+    </mat-form-field>
 
-    <button class="button" type="submit" [disabled]="paymentForm.invalid">Purchase</button>
+    <br>
+    <button class="button" mat-button color="primary" type="submit" [disabled]="!!paymentForm.invalid">Purchase</button>
   </form>
 </div>

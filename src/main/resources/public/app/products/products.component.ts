@@ -48,7 +48,7 @@ export class ProductsComponent implements OnInit {
   }
 
   private loadProducts(): void {
-    this.products$ = this.productService.getProducts(new Pageable(this.pageNumber, 6)).pipe(
+    this.products$ = this.productService.getProducts(new Pageable(this.pageNumber, 4)).pipe(
       tap((page) => this.totalPages = page.totalPages),
       map((page) => page.content)
     );

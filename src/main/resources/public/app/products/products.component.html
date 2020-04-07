@@ -1,10 +1,12 @@
 <div>
-  <ng-container *ngFor="let product of products$ | async; trackBy: trackByFn">
-    <app-product [product]="product" (addToCartEvent)="addToCart($event)"></app-product>
-  </ng-container>
+  <mat-grid-list cols="4" rowHeight="500px">
+    <mat-grid-tile *ngFor="let product of products$ | async; trackBy: trackByFn">
+      <app-product [product]="product" (addToCartEvent)="addToCart($event)"></app-product>
+    </mat-grid-tile>
+  </mat-grid-list>
 
-  <div>
-    <button (click)="prevPage()" [disabled]="pageNumber === 0">&lt;</button>
-    <button (click)="nextPage()" [disabled]="pageNumber === totalPages - 1">&gt;</button>
+  <div class="pagination">
+    <button class="prev-page" mat-mini-fab (click)="prevPage()" [disabled]="pageNumber === 0">&lt;</button>
+    <button class="next-page" mat-mini-fab (click)="nextPage()" [disabled]="pageNumber === totalPages - 1">&gt;</button>
   </div>
 </div>
