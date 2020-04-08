@@ -110,6 +110,9 @@
 
     <resources>
       <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
         <directory>dist/products</directory>
         <targetPath>public</targetPath>
       </resource>

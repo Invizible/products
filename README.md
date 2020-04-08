@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## To Run
 
-`docker-compose up` to run Mongo and App
+1. `docker-compose up` to run Mongo
+2. Run com.github.invizible.products.ProductsApplication or `mvn spring-boot:run`
+3. Run npm start
 
 ## Development server
 
